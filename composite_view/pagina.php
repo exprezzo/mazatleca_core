@@ -33,7 +33,7 @@ class Pagina extends Vista{
 		return true;
 	}
 	
-	function render(){
+	function render($rutaContenido=null){
 		include 'main_layout.html.php';
 	}
 	

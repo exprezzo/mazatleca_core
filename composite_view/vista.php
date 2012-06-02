@@ -16,7 +16,7 @@ class Vista{
 	//Archivos javascript que se incluirán en el header
 	var $javascripts=array();
 	
-	function render($rutaContenido){
+	function render($rutaContenido=null){
 	
 		if ($rutaContenido!=undefined){
 			$this->setRutaContenido($rutaContenido);
@@ -54,6 +54,8 @@ class Vista{
 		*/
 		
 		$this->rutaContenido=$ruta;
+	}
+	function Vista(){
 	}
 }
 ?>

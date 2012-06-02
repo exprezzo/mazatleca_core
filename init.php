@@ -1,8 +1,9 @@
 <?php 
 if (!isset($_SESSION))session_start();
-
-//APP_PATH
-
+/*if ( !defined('RUTA_BASE') ){
+	define("RUTA_BASE", "");	//Cuando se accede al controlador directamente (No mediante el front controller)
+	define("RUTA_MVC","../");
+}*/
 //incluir modelo principal
 
 //incluir controlador principal
@@ -11,5 +12,10 @@ if (!isset($_SESSION))session_start();
 require_once('composite_view/vista.php');
 require_once('composite_view/pagina.php');
 require_once('modelo.php');
-require_once('../vistas/theme1/layout_view.php');
+require_once('controlador.php');
+
+
+define("APP_PATH","../saw_app/");
+require_once(APP_PATH.'vistas/index_view.php');
+
 ?>

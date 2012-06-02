@@ -1,6 +1,9 @@
 <?php
+
 class Controlador{
-	var $nombre='Expresso';
+	function render(){
+	}
+	/*var $nombre='Expresso';
 	
 	function render(){
 																
@@ -19,6 +22,6 @@ class Controlador{
 		$pagina->setSeccion('contenido',$vista)	#
 		
 		$pagina->render();						#
-	}
+	}*/
 }
 ?>
