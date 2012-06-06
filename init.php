@@ -14,8 +14,8 @@ require_once('composite_view/pagina.php');
 require_once('modelo.php');
 require_once('controlador.php');
 
+include('config.php');
 
-define("APP_PATH","../saw_app/");
 require_once(APP_PATH.'vistas/index_view.php');
 
 ?>
