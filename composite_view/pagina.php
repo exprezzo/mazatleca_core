@@ -8,9 +8,9 @@ class Pagina extends Vista{
 	
 	function Pagina($contenido=null){
 		if (isset($contenido)){
-			$this->contenido=$contenido;
+			$this->rutaContenido=$contenido;
 		}else{
-			$this->contenido=MZ_TEMA;
+			$this->rutaContenido=MZ_TEMA;
 		}		
 	}
 	/* Como la página está compuesta por diferentes secciones, aqui se agrega cada sección  */

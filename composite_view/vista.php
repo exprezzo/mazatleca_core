@@ -46,8 +46,10 @@ class Vista{
 	}
 	
 	function setRutaContenido($ruta){
-		//Verificar que el archivo existe;
+		if (!empty($contenido) ) $this->rutaContenido=$contenido;
+		
 		/*
+		//Verificar que el archivo existe;
 		//if (file_exists($ruta) ){
 		
 		}
@@ -60,14 +62,12 @@ class Vista{
 		$this->rutaContenido=$ruta;
 	}
 	
-	function setContenido($contenido){
-		if (!empty($contenido) ) $this->contenido=$contenido;
+	/*function setContenido($contenido){
+		if (!empty($contenido) ) $this->rutaContenido=$contenido;
 	}
 		
 	function getContenido(){
 		return $this->contenido;
-	}
-	
-	
+	}*/
 }
 ?>
