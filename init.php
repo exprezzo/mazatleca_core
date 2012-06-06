@@ -15,5 +15,5 @@ require_once('composite_view/pagina.php');
 require_once('modelo.php');
 require_once('controlador.php');
 
-include('config.php');
+include('../config.php');
 ?>
