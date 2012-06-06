@@ -6,6 +6,13 @@ class Pagina extends Vista{
 	var $nombreVistaActiva=''; //Esta variable la usaremos para marcar el menu activo y para el titulo de la pagina (el tag <title> dentro del <head> )
 	var $tema;
 	
+	function Pagina($contenido=null){
+		if (isset($contenido)){
+			$this->contenido=$contenido;
+		}else{
+			$this->contenido=MZ_TEMA;
+		}		
+	}
 	/* Como la página está compuesta por diferentes secciones, aqui se agrega cada sección  */
 	function setSeccion($seccion, $vista){
 		if ( $vista instanceof Vista){	
@@ -33,9 +40,7 @@ class Pagina extends Vista{
 		return true;
 	}
 	
-	function render($rutaContenido=null){
-		include 'main_layout.html.php';
-	}
+	
 	
 	function renderSeccion($seccion){		
 		if ( isset($this->vistas[$seccion]) && $this->vistas[$seccion] instanceof Vista){	
@@ -50,21 +55,8 @@ class Pagina extends Vista{
 		echo "<div style='color:red;'>La Seccion <strong>$seccion</strong> no puede mostrarse.</div>";	//Mostraremos un mensaje de error en esa seccion 
 		return false;
 	}
+
 	
-	
-	
-	/*Usada por el menu para marcar al menu que corresponde con la vista activa */
-	function getMenuState($nombreMenu){		
-		if ( $this->getNombreVistaActiva() == $nombreMenu ){			
-			echo "selected";			
-		}else{
-			echo "unselected";
-		}
-	}
-	
-	public function getNombreVistaActiva(){
-		return $this->nombreVistaActiva;
-	}
 	
 	/**/
 	private function incluirHojasDeEstilos(){
@@ -78,6 +70,18 @@ class Pagina extends Vista{
 			echo $estilo;
 		}
 	}
+	
+	
+	/*function render($rutaContenido=null){
+		//echo $this->getContenido();exit;
+		//echo $this->getContenido();exit;
+		$this->setContenido($rutaContenido);
+		include $this->getContenido();
+	}*/
+	/*Usada por el menu para marcar al menu que corresponde con la vista activa */
+	/*public function getNombreVistaActiva(){
+		return $this->nombreVistaActiva;
+	}*/
 }
 
 ?>

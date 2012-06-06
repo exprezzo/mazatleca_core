@@ -16,15 +16,19 @@ class Vista{
 	//Archivos javascript que se incluirán en el header
 	var $javascripts=array();
 	
+	function Vista($contenido=null,$nombre=null){
+		$this->rutaContenido=$contenido;
+		$this->nombre= $nombre;
+	}
+	
 	function render($rutaContenido=null){
 	
-		if ($rutaContenido!=undefined){
+		if ($rutaContenido!=null){
 			$this->setRutaContenido($rutaContenido);
 		}
-		
-		//mostrar el html... puedes hacer un echo, cerrar las etiquetas php y empezar a escribir html, o incluir otro archivo con el contenido html...a tu gusto
+
 		if ( !empty($this->rutaContenido) ){
-			include $this->rutaContenido;
+			include APP_PATH.'vistas/'.$this->rutaContenido;
 		}	
 	}
 	
@@ -55,7 +59,15 @@ class Vista{
 		
 		$this->rutaContenido=$ruta;
 	}
-	function Vista(){
+	
+	function setContenido($contenido){
+		if (!empty($contenido) ) $this->contenido=$contenido;
 	}
+		
+	function getContenido(){
+		return $this->contenido;
+	}
+	
+	
 }
 ?>
