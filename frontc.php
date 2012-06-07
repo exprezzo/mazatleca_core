@@ -18,14 +18,13 @@ $arrRuta=array();
 if (isset($_SERVER["PATH_INFO"])){
 	 $arrRuta=explode('/',$_SERVER["PATH_INFO"]);
 }
-
  
 if (empty($arrRuta)){
 	$arrRuta=array('','Home');
 }
 
 $controladorName=$arrRuta[1];
-
+//use Mazatleca;
 include APP_PATH.'controladores/'.$controladorName.'.php';
 $className=$controladorName.'Controller';
 $controller=new $className;
