@@ -24,8 +24,7 @@ class Pagina extends Vista{
 			throw new Exception("La vista que intenta agregar es incorrecta");
 			return false;
 		}
-		
-		
+				
 		if ($seccion=='contenido'){
 			$this->nombreVistaActiva=$vista->getNombre();
 		}
@@ -82,6 +81,24 @@ class Pagina extends Vista{
 	/*public function getNombreVistaActiva(){
 		return $this->nombreVistaActiva;
 	}*/
+	#================================================================================
+	#				MENU
+	#================================================================================
+	function setMenuActivo($menu){
+		$this->menuActivo=$menu;
+	}
+	function getMenuActivo(){
+		return $this->menuActivo;
+	}
+	
+	function getMenuState($nombreMenu){
+	
+		if ( $this->getMenuActivo() == $nombreMenu ){			
+			echo "selected";			
+		}else{
+			echo "unselected";
+		}
+	}
 }
 
 ?>

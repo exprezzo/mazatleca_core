@@ -12,9 +12,9 @@ class Menu extends Vista{
 	function getMenuState($nombreMenu){
 	
 		if ( $this->getMenuActivo() == $nombreMenu ){			
-			echo "active";			
+			echo "selected";			
 		}else{
-			echo "";
+			echo "unselected";
 		}
 	}
 }
