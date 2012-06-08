@@ -1,6 +1,6 @@
 <?php
 require_once('init.php');
-
+#http://pear.php.net/manual/en/package.networking.net-url-mapper.php
 /* 					Front controller 
 
 Analiza la url de la peticion y redirecciona a una funcion de un controlador
@@ -31,7 +31,7 @@ $controller=new $className;
 
 if (sizeof($arrRuta)==2){
 	$controller->render();
-}else{	
+}else{
 	$accion=$arrRuta[2];
 	$controller->$accion();
 }
