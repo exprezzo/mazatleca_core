@@ -1,6 +1,6 @@
 <?php
 require_once('init.php');
-
+#http://pear.php.net/manual/en/package.networking.net-url-mapper.php
 /* 					Front controller 
 
 Analiza la url de la peticion y redirecciona a una funcion de un controlador
@@ -18,21 +18,20 @@ $arrRuta=array();
 if (isset($_SERVER["PATH_INFO"])){
 	 $arrRuta=explode('/',$_SERVER["PATH_INFO"]);
 }
-
  
 if (empty($arrRuta)){
 	$arrRuta=array('','Home');
 }
 
 $controladorName=$arrRuta[1];
-
+//use Mazatleca;
 include APP_PATH.'controladores/'.$controladorName.'.php';
 $className=$controladorName.'Controller';
 $controller=new $className;
 
 if (sizeof($arrRuta)==2){
 	$controller->render();
-}else{	
+}else{
 	$accion=$arrRuta[2];
 	$controller->$accion();
 }

@@ -11,7 +11,7 @@ class Pagina extends Vista{
 			$this->rutaContenido=$contenido;
 		}else{
 			$this->rutaContenido=MZ_TEMA;
-		}		
+		}
 	}
 	/* Como la página está compuesta por diferentes secciones, aqui se agrega cada sección  */
 	function setSeccion($seccion, $vista){
@@ -29,18 +29,16 @@ class Pagina extends Vista{
 			$this->nombreVistaActiva=$vista->getNombre();
 		}
 		
-		/* 
+		/*
 			En la funcion render() de la pagina, se deben incluir en el header, los archivos js y css incluidos por la vista.
 			¿Que estrategia usaremos?	
 			Leer el arreglo styleSheets y agregar cada elemento a $this->styleSheets
 			Leer el arreglo javascripts y agregar cada elemento a $this->styleSheets
 			en el template de la pagina, en el header invocar la funcion incluirHojasDeEstilos y incluirJavascripts. volalá
-		*/		
+		*/
 		return true;
 	}
-	
-	
-	
+
 	function renderSeccion($seccion){		
 		if ( isset($this->vistas[$seccion]) && $this->vistas[$seccion] instanceof Vista){	
 			//Si la vista es válida, se muestra
@@ -55,8 +53,6 @@ class Pagina extends Vista{
 		return false;
 	}
 
-	
-	
 	/**/
 	private function incluirHojasDeEstilos(){
 		foreach($this->javascripts as $js){
