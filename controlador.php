@@ -23,5 +23,11 @@ class Controlador{
 		
 		$pagina->render();						#
 	}*/
+	function getModelObject(){
+		if ( !isset($this->model) ){
+			$this->model = new Model();
+		}
+		return $this->model;
+	}
 }
 ?>
