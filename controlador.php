@@ -1,15 +1,16 @@
 <?php
 
 class Controlador{
+
 	function render(){
+		
 	}
 	/*var $nombre='Expresso';
 	
 	function render(){
 																
 		$nombre=$this->nombre;									#
-		$tema="Default";										#
-		
+		$tema="Default";										#		
 		//-------------------------------------------------------
 		//con autoloading ya no sera necesario esta parte 
 		//require_once('../vistas/$tema/$nombre_view.php');		
