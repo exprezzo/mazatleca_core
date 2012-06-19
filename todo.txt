@@ -1,0 +1,5 @@
+hacer un script .bat para crear la estructura basica de un proyecto cangrejo-MVC 
+seria algo asi como:
+
+
+cangrejo crear proyecto [nombreDelProyecto]

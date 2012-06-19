@@ -24,18 +24,21 @@ if (empty($arrRuta)){
 }
 
 $controladorName=$arrRuta[1];
-//use Mazatleca;
-include APP_PATH.'controladores/'.$controladorName.'.php';
-$className=$controladorName.'Controller';
-$controller=new $className;
 
-if (sizeof($arrRuta)==2){
-	$controller->render();
+if (strtoupper($controladorName)=='PAGINAS'){	
+	$controller=new Controlador();	
+	$accion=$arrRuta[2];			
+	$controller->render($accion);
 }else{
-	$accion=$arrRuta[2];
-	$controller->$accion();
+	include APP_PATH.'controladores/'.$controladorName.'.php';
+	$className=$controladorName.'Controller';
+	$controller=new $className;
+
+	if (sizeof($arrRuta)==2){
+		$controller->render();
+	}else{
+		$accion=$arrRuta[2];
+		$controller->$accion();
+	}
 }
-
-
-
 ?>
